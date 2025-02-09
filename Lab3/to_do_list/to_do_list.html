@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-do-List</title>
+        <style>
+            .div-one{
+                background-color: black;
+                color: darkgrey;
+                padding: 1px;
+                font-size: 15px;
+                font-family: Arial, sans-serif;
+            }
+            h3{
+                margin-left: 40px;
+            }
+            .div-two{
+                margin-left: 25%;
+                font-family: Arial, sans-serif;
+            }
+            #task{
+                padding: 6px;
+                border-radius: 3px;
+                border: 1px solid darkgray;
+                width: 700px;
+                font-size: 15px;
+            }
+            #button{
+                border-radius: 3px;
+                border: 1px solid #3674B5;
+                background-color: #3674B5;
+                font-size: 13px;
+                color: white;
+                padding: 7px;
+                cursor: pointer;
+            }
+            #button:hover{
+                background-color: #155E95;
+            }
+            ul {
+                padding: 0;
+            }
+            ul li{
+                cursor: pointer;
+                padding: 12px;
+                list-style: none;
+                position: relative;
+                margin: 5px;
+                border-radius: 5px;
+                border: 1px solid darkgray;
+                width: 600px;
+            }
+            ul li::before{
+                content: '';
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                border-radius: 5px;
+                background-size: cover;
+                left: -25px;
+            }
+            ul li.checked{
+                color: darkgray;
+                text-decoration: line-through;
+            }
+            .delete{
+                margin-left: 500px;
+                width: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "div-one">
+            <h3>ToDo List</h3>
+        </div>
+        <div class = "div-two">
+            <h1>ToDo List</h1>
+            <input type="text" id = "task" placeholder="New Task">
+            <button id = "button">Add</button>
+            <ul class = "list"></ul>
+        </div>
+        <script>
+            let task_input = document.getElementById("task");
+            let add_button = document.getElementById("button");
+            let list = document.querySelector(".list");
+
+            function addTask() {
+                const taskText = task_input.value;
+
+                if (taskText === '') {
+                    alert("You have to write something!");
+                    return;
+                }
+
+                let li = document.createElement('li');
+                li.innerHTML = `
+                    <input type="checkbox" class="task-checkbox">
+                    <span>${taskText}</span>
+                    <button class="delete">
+                        <img src = "pic/trash.png" width = "15">
+                    </button>`;
+
+                li.querySelector(".task-checkbox").addEventListener("change", () => {
+                    li.classList.toggle("checked");
+                });
+
+                li.querySelector(".delete").addEventListener("click", () => {
+                    li.remove();
+                });
+
+                list.appendChild(li);
+                task_input.value = '';
+            }
+
+            add_button.addEventListener("click", addTask);
+        </script>
+    </body>
+</html>
