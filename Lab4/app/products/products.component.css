@@ -1,0 +1,24 @@
+#product-grid{
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: auto;
+    gap:10px;
+  }
+  
+  .product-image{
+    height: 30%;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: scale-down;
+  }
+  
+  .product{
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-color:cornflowerblue;
+    border-style: solid;
+    padding:5px;
+    box-shadow: 1px 1px 3px black;
+  }

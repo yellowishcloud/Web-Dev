@@ -1,0 +1,15 @@
+<div class="product-container">
+    <div id="product-grid">
+      <div class="product" *ngFor="let product of products">
+  
+        <h2>{{ product.name }}</h2>
+        <a [href]=" product.link "><img class="product-image" [src]="product.image" [alt]="product.name" ></a>
+        <p>{{ product.description }}</p>
+        <p>Rating: {{ product.rating }}⭐</p>
+  
+        <button (click)="shareOnWhatsApp(product)">Share on WhatsApp</button>
+        <button (click)="shareOnTelegram(product)">Share on Telegram</button>
+  
+      </div>
+    </div>
+  </div>
