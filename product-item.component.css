@@ -1,0 +1,21 @@
+.product-image{
+    height: 200px;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: scale-down;
+  }
+  
+  .product{
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-color:cornflowerblue;
+    border-style: solid;
+    padding:5px;
+    box-shadow: 1px 1px 3px black;
+  }
+  
+  .product h2{
+    font-size:16px;
+  }

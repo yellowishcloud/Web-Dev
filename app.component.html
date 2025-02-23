@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+<app-products></app-products>
+=======
+<div class="product-categories">
+  <button (click)="assignCategory('Mobile Phones')">Mobile Phones</button>
+  <button (click)="assignCategory('Stationery')">Stationery</button>
+  <button (click)="assignCategory('Toasters')">Toasters</button>
+  <button (click)="assignCategory('Vacuum Cleaners')">Vacuum Cleaners</button>
+</div>
+
+<app-product-list
+  *ngIf="selectedCategory"
+  [products]="products[selectedCategory]"
+  [globalProducts]="products"
+  [currentCategory]="selectedCategory"
+>
+</app-product-list>
+>>>>>>> 5db2126f (Initial commit)
